@@ -1,0 +1,11 @@
+#+begin_src python :exports none :session
+from datetime import datetime
+from dateutil.relativedelta import *
+
+def get_age():
+    return relativedelta(datetime.now(), datetime.strptime("01 05 22", "%y %m %d")).years
+#+end_src
+
+#+RESULTS:
+
+I am a src_python[:session]{get_age()} {{{results(22)}}} year old undergraduate student studying computer science. My life has been unremarkable so far and I have no particular achievements or accomplishments to highlight.
