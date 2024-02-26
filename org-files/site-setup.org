@@ -2,17 +2,17 @@
 I use [[https://nearlyfreespeech.net][NearlyFreeSpeech]] as my website host. Their non-production site pricing very cheap (0.01 USD per day). Probably, using Github pages is a better idea, but I didn't want to make an entirely new account just for a website.
 
 * Publishing
-I write my notes with ~org-mode~. The notes are exported to HTML and published with Rsync.
+I write my notes with ~org-mode~. The notes are exported to HTML and uploaded with Rsync.
 
 Here's the elisp code snippet.
 
 #+begin_src elisp
 (setq org-publish-project-alist
-		'(("website" :base-directory "[directory]/website/org-files/"
-		   :publishing-directory "[directory]/website/publish/"
+		'(("website" :base-directory "[directory]/org-files/"
+		   :publishing-directory "[directory]/publish/"
 		   :completion-function (lambda (property_list)
 								  (interactive)
-								  (async-shell-command "../publish.sh"))
+								  (async-shell-command "./publish.sh"))
 		   :auto-sitemap t
 		   :sitemap-title "nothing's inside sitemap")))
 #+end_src
