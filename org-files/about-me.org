@@ -1,3 +1,5 @@
+#+TITLE: About me
+
 #+begin_src python :exports none :session
 from datetime import datetime
 from dateutil.relativedelta import *
@@ -8,4 +10,9 @@ def get_age():
 
 #+RESULTS:
 
-I am a src_python[:session]{get_age()} {{{results(22)}}} year old undergraduate student studying computer science. My life has been unremarkable so far and I have no particular achievements or accomplishments to highlight.
+I am a src_python[:session]{get_age()} {{{results(22)}}} year old undergraduate student studying computer science. Please don't expect much out of me; I am quite incompetent.
+
+* Interests
+I am mostly interested in graphics programming and programming language theory. I don't know much about those fields; I plan on posting my learning progress on this website. 
+
+I am additionally interested in Japanese animation and culture. My favourite TV show is Fullmetal Alchemist Brotherhood. 

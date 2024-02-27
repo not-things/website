@@ -1,0 +1,12 @@
+#+TITLE: Monte-carlo integrator
+
+* Goal
+Write a program that compares Monte Carlo and one or more alternative numerical integration techniques. Structure this program so that it is easy to replace the particular function being integrated. Verify that the different techniques compute the same result (given a sufficient number of samples for each of them). Modify your program so that it draws samples from distributions other than the uniform distribution for the Monte Carlo estimate, and verify that it still computes the correct result when the correct estimator, Equation (2.7), is used. (Make sure that any alternative distributions you use have nonzero probability of choosing any value of \(x\) where \(f(x)>0\).)
+
+From https://pbr-book.org/4ed/Monte_Carlo_Integration/Exercises
+
+
+* Program
+See the online demo [[https://mc.nothingsinside.org][here]].
+
+* Structure
