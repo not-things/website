@@ -4,6 +4,11 @@
 - [[file:about-me.org][about-me]]
 - [[file:index.org][index]]
 - [[file:site-setup.org][site-setup]]
+- blog
+  - [[file:blog/index.org][blog]]
+  - [[file:blog/first-post.org][first-post]]
+- daily
+  - [[file:daily/index.org][index]]
 - experiments
   - [[file:experiments/experiments.org][Experiments]]
   - mc-sampler

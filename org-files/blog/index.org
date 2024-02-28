@@ -1,0 +1,4 @@
+#+TITLE: blog
+
+- [[file:first-post.org][first-post]] 
+  - Posted on Tue Feb 27 20:47:32 2024

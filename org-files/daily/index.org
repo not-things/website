@@ -1,0 +1,6 @@
+This is where I write some of my daily thoughts.
+
+* 2024-02-27
+Just finished setting up the blog. I wonder if I'm restricting myself too much by using pure org mode tools. Now to study for the midterm tomorrow...
+
+I didn't think much about what I want to gain from creating this website. I suppose to get some introspection. I don't know. 
