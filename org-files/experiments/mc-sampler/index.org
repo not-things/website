@@ -1,7 +1,7 @@
 #+TITLE: monte-carlo integrator
 
-* Goal
-- Gain a solid understanding of Monte-Carlo integration
+* Motivation
+- Gain an understanding of Monte-Carlo integration by implementing it
 - Try out [[https://emscripten.org/][Emscripten]] as a way of running C/C++ code on the web 
 
 * Problem
@@ -19,4 +19,4 @@ Implementing the code for one-dimensional monte-carlo was relatively straightfor
 - better user interface.
 
 
-I found fiddling with Emscripten to be a bit of a pain. 
+I found fiddling with Emscripten to be a bit of a pain. I need to learn more about it.
