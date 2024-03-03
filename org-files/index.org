@@ -5,6 +5,6 @@ I mostly intend for this to be a place to sort my thoughts out. And also a place
 - [[file:about-me.org][about me]]
 - [[file:sitemap.org][sitemap]]
 - [[file:site-setup.org][site setup]]
-- [[file:experiments/experiments.org][experiments]]
+- [[file:learning/index.org][learning]]
 - [[file:blog/index.org][blog]]
-- [[file:daily/index.org][daily blog]]
+- [[file:daily/index.org][daily]]

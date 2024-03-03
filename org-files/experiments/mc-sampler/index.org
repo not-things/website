@@ -14,9 +14,10 @@ It's not finished, but you can see the online demo [[https://mc.nothingsinside.o
 
 * Notes
 Implementing the code for one-dimensional monte-carlo was relatively straightforward. There's a few things I need to do before this is done:
-- add a way to check the convergence of the method
+- add a way to check the numerical convergence
 - implement other numerical integration techniques to compare with MC
 - better user interface.
+  - implement a simple calculator interface for arbitrary functions
 
 
 I found fiddling with Emscripten to be a bit of a pain. I need to learn more about it.

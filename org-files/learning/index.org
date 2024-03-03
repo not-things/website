@@ -1,0 +1,8 @@
+#+TITLE: learning
+
+I have a small [[https://www.orgroam.com/][Org Roam]] system set up to store my notes on various topics. The notes are on pretty trivial undergrad CS stuff, but I'd like to post some of the more complete ones. Maybe they'll be of use to someone. 
+
+I'll also host my experiments with the web here.
+
+- [[file:../notes/index.org][notes]]
+- [[file:../experiments/experiments.org][experiments]]

@@ -13,3 +13,7 @@
   - [[file:experiments/experiments.org][Experiments]]
   - mc-sampler
     - [[file:experiments/mc-sampler/index.org][Monte-carlo integrator]]
+- learning
+  - [[file:learning/index.org][learning]]
+- notes
+  - [[file:notes/index.org][index]]
