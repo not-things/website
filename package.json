@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "@parcel/watcher": "^2.4.1",
+    "parcel": "^2.12.0"
+  },
+  "name": "website",
+  "version": "1.0.0",
+  "author": "IJN Akashi AR <dabanya@protonmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@parcel/compressor-brotli": "^2.12.0",
+    "@parcel/compressor-gzip": "^2.12.0"
+  },
+  "distDir": "dist"
+}

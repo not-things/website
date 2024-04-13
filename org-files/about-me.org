@@ -12,28 +12,24 @@ def get_age():
 
 # I am a src_python[:session]{get_age()} {{{results(22)}}} year old undergraduate student studying computer science. Please don't expect much out of me; I am quite incompetent.
 
-I'm a computer science undergraduate student in my early 20s. You can call me nothings. Please don't expect much out of me; I am an idiot. 
+I'm a computer science undergraduate student in my early 20s. You can call me /nothings/. Please don't expect much out of me; I am an idiot. 
 
 I don't have anything set up for communication.
 
 * Interests
 
 ** Academic
-I am interested in graphics programming and programming language theory. I'm not good enough to go to graduate school to study them further, but I would still like to learn about them in my free time. I plan on posting my learning progress on this website.
+I am interested in graphics programming and programming language theory. I'm not smart enough to go to graduate school to study them further, but I would still like to learn about them in my free time. I plan on posting my learning progress on this website.
 
 ** Languages
-My favourite programming language is C++. I became very familiar with it after using it exclusively for a project at an internship. I like it because it's very flexible and has great performance. Its template metaprogramming system lets me express abstract and generic programs for little to no performance cost. My main gripes with C++ is that it's very complex. There are a lot of rules to keep track of in order to avoid undefined behavior or degraded performance. 
-
-My other favourite language is Racket, which I really got to know after taking a programming languages course where I built various interpreters in the language. I appreciate how easy it is to write a new language with Racket. Being able to manipulate data stored as s-expressions in order to change the behaviour of the executing code is fascinating. I hope to write more Racket in the future. On that end, I also like Scheme. I enjoy its minimalism.
-
-I also program in C (with less enthusiasm), Java, Typescript, and Python. I don't have any particularly remarkable projects done in them. 
+My favourite programming languages are C++ and Racket.
 
 ** Hobbies
-Outside of schoolwork, I enjoy Japanese animation and culture. My favourite shows are Fullmetal Alchemist Brotherhood, Steins;Gate and Made in Abyss. I like to watch romantic comedies regardless of their quality. 
+I enjoy Japanese animation and culture. My favourite shows are Fullmetal Alchemist Brotherhood, Steins;Gate and Made in Abyss. I like to watch romantic comedies regardless of their quality. 
 
 I have a film camera that I almost never use. My photos suck.
 
 * Computer setup
-I have been running [[https://archlinux.org/][Arch Linux]] on my desktop computer since 2019, when I first got it. I find that it suits my purpose and doesn't break often.
+I have been running [[https://archlinux.org/][Arch Linux]] on my desktop computer since 2019. I find that it suits my purpose.
 
 I use the GNOME desktop environment with a few custom keybinds. I use the [[https://github.com/CZ-NIC/run-or-Raise][run-or-raise]] extension to switch to my most commonly used programs (text editor, browser, PDF viewer, terminal) if they already have a window. Otherwise, it starts a new process for the program that I want. The programs are binded to conventient keybinds. I found this setup to be an efficient way to switch windows. 

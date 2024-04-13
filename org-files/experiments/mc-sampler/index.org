@@ -2,7 +2,8 @@
 
 * Motivation
 - Gain an understanding of Monte-Carlo integration by implementing it
-- Try out [[https://emscripten.org/][Emscripten]] as a way of running C/C++ code on the web 
+- Try out [[https://emscripten.org/][Emscripten]] as a way of running C/C++ code on the web
+- Implement a basic DSL for arithmetic
 
 * Problem
 Write a program that compares Monte Carlo and one or more alternative numerical integration techniques. Structure this program so that it is easy to replace the particular function being integrated. Verify that the different techniques compute the same result (given a sufficient number of samples for each of them). Modify your program so that it draws samples from distributions other than the uniform distribution for the Monte Carlo estimate, and verify that it still computes the correct result when the correct estimator, Equation (2.7), is used. (Make sure that any alternative distributions you use have nonzero probability of choosing any value of \(x\) where \(f(x)>0\).)
@@ -16,7 +17,7 @@ It's not finished, but you can see the online demo [[https://mc.nothingsinside.o
 Implementing the code for one-dimensional monte-carlo was relatively straightforward. There's a few things I need to do before this is done:
 - add a way to check the numerical convergence
 - implement other numerical integration techniques to compare with MC
-- better user interface.
+- better user interface
   - implement a simple calculator interface for arbitrary functions
 
 

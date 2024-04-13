@@ -1,10 +1,8 @@
 This is my website. There's nothing much going on here. 
 
-I mostly intend for this to be a place to sort my thoughts out. And also a place to experiment with some web technology stuff. It will mostly consist of random ramblings and half-completed projects/ideas. I hope that you'll find it useful. 
+This place is mostly a pseudo-anonymous way for me to sort my thoughts out. It's also somewhere for me to experiment with some web development stuff. Those will mostly consist of random ramblings about code and some half-completed projects/ideas. I hope that you'll find it useful. 
 
 - [[file:about-me.org][about me]]
-- [[file:sitemap.org][sitemap]]
-- [[file:site-setup.org][site setup]]
 - [[file:learning/index.org][learning]]
 - [[file:blog/index.org][blog]]
-- [[file:daily/index.org][daily]]
+- [[file:sitemap.org][sitemap]]

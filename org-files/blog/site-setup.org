@@ -1,0 +1,44 @@
+#+TITLE:website setup
+#+DATE: 2024-03-03
+#+FILETAGS: website
+#+SETUPFILE: setup
+
+How I set up this website. 
+* Webhost
+I use [[https://nearlyfreespeech.net][NearlyFreeSpeech]] as my website host. Their non-production site pricing very cheap (0.01 USD per day). If I was just hosting static content, using Github pages is probably a better idea.
+
+* Publishing
+My website is written with Emac's ~org-mode~. The notes are exported to HTML and uploaded with Rsync.
+
+I set up a publish project for the blog and the website. Here's the elisp code snippet.
+
+#+begin_src elisp
+(setq org-publish-project-alist
+	  '(("blog" 
+		 :base-directory "/website/org-files/blog/"
+		 :recursive t
+		 :publishing-directory "/website/publish/blog/"
+		 :completion-function (lambda (property_list)
+								(async-shell-command "website/publish.sh"))
+		 :auto-sitemap t
+		 :sitemap-filename "index.org"
+		 :sitemap-title "blog"
+		 :sitemap-sort-files "chronologically"
+		 :sitemap-format-entry (lambda (file style proj)
+								 (let* ((project (org-publish-get-project-from-filename file))
+										(date (org-publish-find-date file project))
+										(title (org-publish-find-title file project)))
+								   (concat "[[file:" file "][" title "]] \n - Posted on " (current-time-string date))))
+		 :with-date t
+		 :html-preamble "<a href=\"https://nothingsinside.org/\">Home</a>")
+		("website" 
+		 :base-directory "website/org-files/"
+		 :recursive t
+		 :publishing-directory "website/publish/"
+		 :completion-function (lambda (property_list)
+								(async-shell-command "website/publish.sh"))
+		 :auto-sitemap t
+		 :sitemap-title "nothing's inside sitemap")))
+#+end_src
+
+Reference: https://orgmode.org/manual/Publishing.html

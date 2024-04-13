@@ -3,12 +3,9 @@
 - [[file:404.org][404]]
 - [[file:about-me.org][about-me]]
 - [[file:index.org][index]]
-- [[file:site-setup.org][site-setup]]
 - blog
   - [[file:blog/index.org][blog]]
-  - [[file:blog/first-post.org][first-post]]
-- daily
-  - [[file:daily/index.org][index]]
+  - [[file:blog/site-setup.org][website setup]]
 - experiments
   - [[file:experiments/experiments.org][Experiments]]
   - mc-sampler

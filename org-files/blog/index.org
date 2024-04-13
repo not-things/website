@@ -1,4 +1,4 @@
 #+TITLE: blog
 
-- [[file:first-post.org][first-post]] 
-  - Posted on Tue Feb 27 20:47:32 2024
+- [[file:site-setup.org][website setup]] 
+  - Posted on Sun Mar  3 17:31:06 2024
