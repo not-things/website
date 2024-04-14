@@ -1,35 +1,5 @@
 #+TITLE: about me
 
-#+begin_src python :exports none :session
-from datetime import datetime
-from dateutil.relativedelta import *
-
-def get_age():
-    return relativedelta(datetime.now(), datetime.strptime("01 05 22", "%y %m %d")).years
-#+end_src
-
-#+RESULTS:
-
-# I am a src_python[:session]{get_age()} {{{results(22)}}} year old undergraduate student studying computer science. Please don't expect much out of me; I am quite incompetent.
-
-I'm a computer science undergraduate student in my early 20s. You can call me /nothings/. Please don't expect much out of me; I am an idiot. 
+I'm a 20-something CS undergraduate student. You can call me /nothings/. Please don't expect much out of me. I am an idiot. 
 
 I don't have anything set up for communication.
-
-* Interests
-
-** Academic
-I am interested in graphics programming and programming language theory. I'm not smart enough to go to graduate school to study them further, but I would still like to learn about them in my free time. I plan on posting my learning progress on this website.
-
-** Languages
-My favourite programming languages are C++ and Racket.
-
-** Hobbies
-I enjoy Japanese animation and culture. My favourite shows are Fullmetal Alchemist Brotherhood, Steins;Gate and Made in Abyss. I like to watch romantic comedies regardless of their quality. 
-
-I have a film camera that I almost never use. My photos suck.
-
-* Computer setup
-I have been running [[https://archlinux.org/][Arch Linux]] on my desktop computer since 2019. I find that it suits my purpose.
-
-I use the GNOME desktop environment with a few custom keybinds. I use the [[https://github.com/CZ-NIC/run-or-Raise][run-or-raise]] extension to switch to my most commonly used programs (text editor, browser, PDF viewer, terminal) if they already have a window. Otherwise, it starts a new process for the program that I want. The programs are binded to conventient keybinds. I found this setup to be an efficient way to switch windows. 

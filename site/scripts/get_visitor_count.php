@@ -1,10 +1,9 @@
 <?php
-
-$file = fopen("visitor_count.txt", "r+");
 set_error_handler(function () {
     exit();
 }, E_WARNING | E_NOTICE);
-$contents = fread($file, filesize("visitor_count.txt"));
+$file = fopen("/home/protected/visitor_count.txt", "r+");
+$contents = fread($file, filesize("/home/protected/visitor_count.txt"));
 if($contents === false) {
     exit();
 }
