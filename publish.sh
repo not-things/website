@@ -35,5 +35,3 @@ rsync -av -e ssh "$root_dir"/site/protected/
 #        exit;;
 #   esac
 #done
-
-#ssh dingerdonger02_nothingsinside@ssh.nyc1.nearlyfreespeech.net "chmod 666 /home/public/nothingsinside.org/scripts/visitor_count.txt"
