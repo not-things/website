@@ -15,12 +15,12 @@ cp -R "$site_dir"/* "$build_dir"
 yarn parcel build "$build_dir/*.html" --no-source-maps --no-cache
 
 # Static content
-rsync -av -e ssh --delete ~/org/website/dist/* dingerdonger02_nothingsinside@ssh.nyc1.nearlyfreespeech.net:/home/public/nothingsinside.org/
+rsync --delete -av -e ssh ~/org/website/dist/ dingerdonger02_nothingsinside@ssh.nyc1.nearlyfreespeech.net:/home/public/nothingsinside.org/
 
 # Scripts
-rsync -av -e ssh --delete ~/org/website/site/scripts/*.php dingerdonger02_nothingsinside@ssh.nyc1.nearlyfreespeech.net:/home/public/nothingsinside.org/scripts/
+rsync -av -e ssh --delete ~/org/website/site/scripts/ dingerdonger02_nothingsinside@ssh.nyc1.nearlyfreespeech.net:/home/public/nothingsinside.org/scripts/
 
 # Protected
-rsync -av -e ssh ~/org/website/site/protected/* dingerdonger02_nothingsinside@ssh.nyc1.nearlyfreespeech.net:/home/protected/
+rsync -av -e ssh ~/org/website/site/protected/ dingerdonger02_nothingsinside@ssh.nyc1.nearlyfreespeech.net:/home/protected/
 
 #ssh dingerdonger02_nothingsinside@ssh.nyc1.nearlyfreespeech.net "chmod 666 /home/public/nothingsinside.org/scripts/visitor_count.txt"
