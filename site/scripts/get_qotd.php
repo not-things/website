@@ -1,9 +1,9 @@
 <?php
 
 /* Gets the quote of the day from a file */
-//set_error_handler(function () {
-//    exit();
-//}, E_WARNING | E_NOTICE);
+set_error_handler(function () {
+   exit();
+}, E_WARNING | E_NOTICE);
 $file = fopen("/home/protected/quotes.txt", "r");
 $quote_count = count(file("/home/protected/quotes.txt"));
 /*Pick a random quote*/
@@ -13,7 +13,6 @@ while ($quote_i-- > 0) {
 }
 $quote = fgets($file);
 if($quote === false) {
-    echo "";
     exit();
 }
 echo $quote;
