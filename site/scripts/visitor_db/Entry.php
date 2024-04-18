@@ -10,8 +10,12 @@ class Entry
     private static int $TTL_SHIFT = 8;
     private static int $MAX_TTL = 60;
 
-    function __construct(int &$ptr)
+    function __construct(int | null &$ptr)
     {
+        if($ptr === null) {
+
+        }
+
         $this->reference = &$ptr;
     }
 

@@ -1,6 +1,8 @@
 <?php
 
 $configs = include('/home/protected/config.php');
+include \Entry::class;
+
 $db_dir = $configs['db_dir'];
 $file = fopen($db_dir, 'rb+');
 
@@ -14,10 +16,7 @@ if($free === 0) {
     exit(1);
 }
 
-// Skip reserved space
-fseek($file, PHP_INT_SIZE * 2);
-
 // The free pointer will always point towards EOF, or the next free list
 if($free === $filesize) {
-
+    fseek($file, $free);
 }
