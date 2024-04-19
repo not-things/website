@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visitor Counter</title>
+</head>
+<body>
+<script lang="typescript">
+    document.getElementById("generator").onclick(function (){
+        fetch("../../scripts/add_visitor.php")
+            .then((res)=>{
+                document.getElementById("generator").hidden = true
+            })
+    })
+
+</script>
+<p>Here's a simple visitor that you can add to your website. Click the button below.</p>
+<button hidden="false" id="generator">Generate an entry</button>
+
+<code hidden="true" id="code"></code>
+</body>
+</html>

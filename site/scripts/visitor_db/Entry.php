@@ -1,22 +1,23 @@
 <?php
 
-use JetBrains\PhpStorm\Pure;
-
 class Entry
 {
     private int $reference;
     // The last eight bits are the TTL.
     private static int $TTL_MASK = 0xFF;
     private static int $TTL_SHIFT = 8;
-    private static int $MAX_TTL = 60;
 
-    function __construct(int | null &$ptr)
+    public static int $MAX_TTL = 60;
+
+    function __construct()
     {
-        if($ptr === null) {
+        $this->reference = 0;
+        $this->reset_ttl();
+    }
 
-        }
-
-        $this->reference = &$ptr;
+    function getRegularValue(): int
+    {
+        return $this->reference;
     }
 
     // Returns the new visitor count
@@ -49,6 +50,25 @@ class Entry
     function peek_ttl(): int
     {
         return $this->reference & self::$TTL_MASK;
+    }
+
+    function write_value($fd) : false | int {
+        return fwrite($fd, $this->reference);
+    }
+
+    function copy_from($fd, bool $rewind = true): void
+    {
+        $val = fread($fd, PHP_INT_SIZE);
+        if ($val === false) {
+            exit(1);
+        }
+
+        if($rewind) {
+            fseek($fd, -PHP_INT_SIZE, SEEK_CUR);
+        }
+
+        $this->reference = $val;
+
     }
 
 }

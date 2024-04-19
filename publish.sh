@@ -1,5 +1,15 @@
 #!/bin/sh
 
+while getopts ":h" option; do
+   case $option in
+      h) # display Help
+         Help
+         exit;;
+      *)
+        exit;;
+   esac
+done
+
 root_dir=$(pwd)
 build_dir=$root_dir/build
 site_dir=$root_dir/site
@@ -25,13 +35,3 @@ rsync -av -e ssh --delete "$root_dir"/site/scripts/ "${scripts_dest:?}"
 # Protected directory, for non user-facing data
 rsync -av -e ssh "$root_dir"/site/protected/
 
-
-#while getopts ":h" option; do
-#   case $option in
-#      h) # display Help
-#         Help
-#         exit;;
-#      *)
-#        exit;;
-#   esac
-#done
