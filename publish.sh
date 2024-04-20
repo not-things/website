@@ -1,10 +1,16 @@
 #!/bin/sh
 
-while getopts ":h" option; do
+Help() {
+  printf "build"
+}
+
+while getopts ":hd" option; do
    case $option in
       h) # display Help
          Help
          exit;;
+      d)
+
       *)
         exit;;
    esac
