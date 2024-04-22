@@ -24,8 +24,8 @@ while getopts ":hd" option; do
 			exit;;
 		d)
 			cp -Rv "${site_dir:?}"/* "$dist_dir"
+			cp -Rv "$root_dir/site/protected/" "$dist_dir"
 			yarn parcel build "${dist_dir}/*.html" --config .parcelrc_dev --no-cache --dist-dir "dist"
-			# cp -R "$root_dir"/site/scripts/ "$build_dir"
 		;;
 
 		*)

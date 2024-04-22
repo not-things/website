@@ -1,6 +1,8 @@
 <?php
 
-$configs = include('/home/protected/config.php');
+include ('../env.php');
+
+$configs = include(CONFIG_DIR . '/config.php');
 include \Entry::class;
 
 $db_dir = $configs['db_dir'];
