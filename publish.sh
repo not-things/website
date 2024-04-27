@@ -26,7 +26,7 @@ while getopts ":hdb" option; do
 			cp -Rv "${site_dir:?}"/* "$dist_dir"
 			cp -Rv "$root_dir/site/protected/" "$dist_dir"
 			yarn parcel build "${dist_dir}/*.html" --config .parcelrc_dev --no-cache --dist-dir "dist"
-		;;
+			;;
 
 		b)
 			cp -R "${site_dir:?}"/* "$build_dir"
@@ -40,5 +40,9 @@ while getopts ":hdb" option; do
 
 			# Protected directory, for non user-facing data
 			rsync -av -e ssh "$site_dir"/protected/* "${protected_dest:?}"
+			;;
+		*)
+		  Help
+		  exit;;
 	esac
 done
