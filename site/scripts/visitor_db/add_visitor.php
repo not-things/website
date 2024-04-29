@@ -1,24 +1,16 @@
 <?php
 
 include ('../env.php');
-
-$configs = include(CONFIG_DIR . '/config.php');
-include \Entry::class;
-
+$configs = include(CONFIG_DIR . '/visitor_db_config.php');
 $db_dir = $configs['db_dir'];
 $file = fopen($db_dir, 'rb+');
-
+if(!$file) {
+    echo "err";
+    exit(1);
+}
 $filesize = filesize($db_dir);
-if(!$file || !$filesize) {
-    exit(1);
-}
 
-$free=intval(fread($file, PHP_INT_SIZE));
-if($free === 0) {
-    exit(1);
-}
+fseek($file, $filesize);
+fwrite($file, pack("i", 0));
 
-// The free pointer will always point towards EOF, or the next free list
-if($free === $filesize) {
-    fseek($file, $free);
-}
+echo $filesize / 4;

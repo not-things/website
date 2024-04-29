@@ -1,14 +1,19 @@
 <?php
 
-$configs = include('/home/protected/config.php');
-$idx = $_GET['index'];
-if(!is_numeric($idx)) {
-    echo "Invalid name";
+include ('../env.php');
+$configs = include(CONFIG_DIR . '/visitor_db_config.php');
+$idx = $_GET['idx'];
+$db_dir = $configs['db_dir'];
+
+if(!is_numeric($idx) || 4 * $idx > filesize($db_dir)) {
+    echo "Invalid index";
     exit(1);
 }
-$db_dir = $configs['db_dir'];
-$file = fopen($db_dir, 'rb+');
-/* Skip the freelist pointer */
-fseek($file, 1);
 
-fseek($file, $idx);
+$file = fopen($db_dir, 'rb+');
+fseek($file, $idx * 4);
+$val = unpack("iint", fread($file, 4))['int'];
+echo $val;
+fseek($file, -$idx*4);
+fwrite($file, pack("i",$val + 1));
+fclose($file);

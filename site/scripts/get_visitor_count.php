@@ -5,8 +5,8 @@ include("env.php");
 set_error_handler(function () {
     exit();
 }, E_WARNING | E_NOTICE);
-$file = fopen(DATA_DIR . "visitor_count.txt", "r+");
-$contents = fread($file, filesize(DATA_DIR . "visitor_count.txt"));
+$file = fopen(DATA_DIR . "/visitor_count.txt", "r+");
+$contents = fread($file, filesize(DATA_DIR . "/visitor_count.txt"));
 if($contents === false) {
     exit();
 }
