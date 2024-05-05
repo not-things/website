@@ -20,9 +20,7 @@ while getopts "hdb" option; do
 			Help
 			exit;;
 		d) # Debug build
-			cp -Rv "${site_dir:?}"/*.html "$dist_dir"
-			cp -Rv "${site_dir:?}"/*.php  "$dist_dir"
-			cp -Rv "${site_dir:?}"/*.ts   "$dist_dir"
+			# Need to fix
 			cp -Rv "$root_dir/site/protected/" "$dist_dir"
 			yarn parcel build "${dist_dir}/*.html" --config .parcelrc_dev --no-cache --dist-dir "dist"
 			;;
@@ -33,7 +31,7 @@ while getopts "hdb" option; do
 
 			yarn parcel build "${dist_dir:?}/*.html" --no-source-maps --no-cache
 
-			rsync --delete-excluded -av -e ssh --filter="merge ${root_dir:?}/.rsync-filter" "${dist_dir:?}/" "${static_dest:?}"
+			rsync --delete-excluded -av -e ssh --prune-empty-dirs --include="*/" --include-from="${root_dir:?}/.rsync-filter" --exclude="*" "${dist_dir:?}/" "${static_dest:?}"
 			;;
 		?)
 		  Help
