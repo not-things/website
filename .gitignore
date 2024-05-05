@@ -1,4 +1,4 @@
-/site/files/
+/site/files/**/*.html
 **/ltximg
 /other/
 .parcel-cache

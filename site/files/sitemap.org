@@ -1,14 +1,14 @@
 #+TITLE: Sitemap
 
-- [[file:about-me.org][about-me]]
+- [[file:about-me.org][about me]]
 - [[file:index.org][index]]
 - blog
   - [[file:blog/index.org][blog]]
   - [[file:blog/site-setup.org][website setup]]
 - experiments
-  - [[file:experiments/experiments.org][Experiments]]
+  - [[file:experiments/experiments.org][experiments]]
   - mc-sampler
-    - [[file:experiments/mc-sampler/index.org][Monte-carlo integrator]]
+    - [[file:experiments/mc-sampler/index.org][monte-carlo integrator]]
 - learning
   - [[file:learning/index.org][learning]]
 - notes
