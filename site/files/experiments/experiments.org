@@ -1,4 +1,4 @@
 #+TITLE: experiments
 
-- [[file:mc-sampler/index.org][monte carlo sampler]]
+# - [[file:mc-sampler/index.org][monte carlo sampler]]
 - [[file:../../misc/visitor_counter/index.html][visitor counter]]
