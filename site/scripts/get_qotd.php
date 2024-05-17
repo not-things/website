@@ -3,9 +3,6 @@
 include("env.php");
 
 /* Gets the quote of the day from a file */
-//set_error_handler(function () {
-//   exit();
-//}, E_WARNING | E_NOTICE);
 $file = fopen(DATA_DIR . "/quotes.txt", "r");
 $quote_count = count(file(DATA_DIR . "/quotes.txt"));
 /*Pick a random quote*/

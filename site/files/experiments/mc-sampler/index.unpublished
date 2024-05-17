@@ -11,7 +11,7 @@ From https://pbr-book.org/4ed/Monte_Carlo_Integration/Exercises
 It's not finished, but you can see the online demo [[https://mc.nothingsinside.org][here]].
 
 * Notes
-Implementing the code for one-dimensional monte-carlo was relatively straightforward. There's a few things I need to do before this is done:
+Implementing the code for one-dimensional monte-carlo was straightforward. There's a few things I need to do before this is done:
 - add a way to check the numerical convergence
 - implement other numerical integration techniques to compare with MC
 - better user interface

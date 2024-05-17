@@ -11,12 +11,12 @@ function set(id: string, text: string) {
 	}
 }
 
-fetch('../scripts/get_qotd.php')
+fetch('./scripts/get_qotd.php')
 	.then(response => response.text())
 	.then(text => set('quote', '"' + text.trim() + '"'))
 	.catch(()=>console.error("Couldn't get qotd"))
 
-fetch('../scripts/get_visitor_count.php')
+fetch('./scripts/get_visitor_count.php')
     .then(response => response.text())
     .then(text => set('visitor_count', 'You are visitor # ' + text + '.'))
 	.catch(()=>console.error("Couldn't get visitor count"))
