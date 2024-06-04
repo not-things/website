@@ -27,7 +27,7 @@ while getopts "hdb" option; do
 
 		b)
 			# Copy the site over
-			cp -R "${site_dir:?}"/ "$dist_dir"
+			cp -R "${site_dir:?}"/* "$dist_dir"
 
 			yarn parcel build "${dist_dir:?}/*.html" --no-source-maps --no-cache
 
