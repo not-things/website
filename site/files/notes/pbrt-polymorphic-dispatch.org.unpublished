@@ -1,0 +1,55 @@
+#+TITLE: How PBRT's dynamic dispatch works.
+
+This is a writeup on how PBRT's dynamic dispatch with tagged pointers work. Most of the information is on [[https://pbr-book.org/][the book website]] but scattered around a few parts so this is more just all of the information gathered together. I think there's some interesting plumbing that utilizes the expressiveness of the C++ type system. I'm also not particularly well-versed in terms of hardware stuff so there are probably a few errors. Please email me at {ADDRESS} for any mistakes.
+
+* Overview
+
+The key idea is to create a ~TaggedPointer~ class that keeps a templated list of pointers to derived classes, and then have the base class inherit off of it. The initialization of a derived class object initializes the base class object and the derived object itself stored in the ~TaggedPointer~ class. When a function is called on such an object
+
+* Tagged pointers
+On most 64-bit architectures, only the rightmost 48 bits[fn:1] of a pointer are used to point towards a memory address in your process (the virtual memory space). The rest are zeroed out or reserved for the kernel. This is because the need to store \(2^{64}\) (~18 quintillion) bytes in a single process isn't very common yet, so not all bits are used as to save some space and time when traversing the page table[fn:3]. 
+
+That means we can use up to 16 bits for ourselves to store extra metadata. In PBRT's case, it's used to store extra type data. This was done to save some extra space versus dynamic dispatch, which for every class required an extra pointer to the vtable[fn:2].
+
+The type data is used to identify the type of the object at runtime, which then determines the member function that it will run.
+
+* Dynamic dispatch
+Dynamic dispatch means to run different functions based on the type of the object which may only be known at runtime. A simple example:
+
+#+begin_src c++
+struct Base {
+	virtual void member_func();
+};
+
+struct DerivedA : public Base {
+	void member_func() override {
+		std::cout << "Call from A\n";
+	}
+};
+
+struct DerivedB : public Base {
+	void member_func() override {
+		std::cout << "Call from B\n";
+	}
+};
+
+int main() {
+	Base obj = DerivedA();
+	obj.member_func(); /* calls A */
+	obj = DerivedB();
+	obj.member_func(); /* calls B */
+}
+#+end_src
+
+In PBRT the base function inherits off of a ~TaggedPointer~ class
+
+* Conclusion
+
+
+Of course, the credit goes towards the pbrt authors for making an interesting alternative to the vtable mechanism. 
+
+* Footnotes
+
+[fn:3]To translate a virtual memory address to a physical memory addres the page table is used. https://en.wikipedia.org/wiki/Page_table 
+[fn:2]The way that most C++ compilers implement dynamic dispatch. Each class stores an extra member variable pointer that contains a list of member variable functions. See https://en.wikipedia.org/wiki/Virtual_method_table 
+[fn:1]Newer systems may use up to 57 bits. See https://en.wikipedia.org/wiki/Intel_5-level_paging

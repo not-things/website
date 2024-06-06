@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Visitor Counter</title>
 </head>
+
 <body>
-<p>Here's a simple visitor that you can add to your website. Click the button below to generate an entry.</p>
-<button id="button">Generate an entry</button>
-<p hidden id="code explanation"></p>
-<code hidden id="code"></code>
-<script>
-    document.getElementById("button").onclick = function () {
-        console.log('fetching')
-        fetch("../../scripts/visitor_db/add_visitor.php")
-            .then((res) => {
-                console.log(res)
-                return res.text()
-            }).then((idx) => {
-            console.log(idx)
-            document.getElementById("button").style.display = "none"
+    <p>Here's a simple visitor that you can add to your website. Click the button below to generate an entry.</p>
+    <button id="button">Generate an entry</button>
+    <p hidden id="code explanation"></p>
+    <code hidden id="code"></code>
+    <script>
+        document.getElementById("button").onclick = function () {
+            console.log('fetching')
+            fetch("../../scripts/visitor_db/add_visitor.php")
+                .then((res) => {
+                    console.log(res)
+                    return res.text()
+                }).then((idx) => {
+                    console.log(idx)
+                    document.getElementById("button").style.display = "none"
 
-            document.getElementById("code").removeAttribute("hidden")
+                    document.getElementById("code").removeAttribute("hidden")
 
-            const request_url = new Request(`https://nothingsinside.org/scripts/visitor_db/get_visitor.php/?idx=${idx}`, {
-                    method: "GET"
-                }
-            ).url
+                    const request_url = new Request(`https://nothingsinside.org/scripts/visitor_db/get_visitor.php/?idx=${idx}`, {
+                        method: "GET"
+                    }
+                    ).url
 
-            document.getElementById("code").innerHTML = `&ltscript&gt fetch(\"${request_url}\").then( // Your code here ) &lt/script&gt`
-            document.getElementById("code explanation").removeAttribute("hidden")
-            document.getElementById("code explanation").innerHTML = "Now you can get your visitor count by putting this script tag on your website."
-        })
-    }
+                    document.getElementById("code").innerHTML = `&ltscript&gt fetch(\"${request_url}\").then( // Your code here ) &lt/script&gt`
+                    document.getElementById("code explanation").removeAttribute("hidden")
+                    document.getElementById("code explanation").innerHTML = "Now you can get your visitor count by putting this script tag on your website."
+                })
+        }
 
-</script>
+    </script>
 
 </body>
+
 </html>
