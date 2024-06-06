@@ -11,8 +11,8 @@ dist_dir=$root_dir/dist
 # shellcheck source=/dev/null
 . "$root_dir"/.env
 
-rm -rf "${dist_dir:?}"
-mkdir "$dist_dir"
+rm -rf "${dist_dir:?}/*"
+# mkdir "$dist_dir"
 
 while getopts "hdb" option; do
 	case $option in
@@ -21,6 +21,8 @@ while getopts "hdb" option; do
 			exit;;
 		d) # Debug build
 			# Need to fix
+			cp -R "${site_dir:?}"/* "$dist_dir"
+
 			cp -Rv "$root_dir/site/protected/" "$dist_dir"
 			yarn parcel build "${dist_dir}/*.html" --config .parcelrc_dev --no-cache --dist-dir "dist"
 			;;
@@ -33,9 +35,19 @@ while getopts "hdb" option; do
 
 			rsync --delete-excluded -av -e ssh --prune-empty-dirs --include="*/" --include-from="${root_dir:?}/.rsync-filter" --exclude="*" "${dist_dir:?}/" "${static_dest:?}"
 			;;
-		?)
-		  Help
-		  exit;;
-		
+        \?)
+            echo "Invalid option: -$OPTARG" >&2
+            Help
+            ;;
+		:)
+            echo "Option -$OPTARG requires an argument." >&2
+            Help
+            ;;
 	esac
 done
+
+# Check if no options were provided
+if [ "$OPTIND" -eq 1 ]; then
+    echo "No options were specified."
+    Help
+fi

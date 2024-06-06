@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Messages</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <meta charset="UTF-8">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nothingsinside.org/">
+    <meta property="og:title" content="Nothings' Website">
+    <meta property="og:description" content="Nothings' website">
+    <meta property="og:image" content="">
+</head>
+
+<body>
+    You can leave a message here. Maximum 200 characters.
+    <form action="./scripts/messages/post_message.php" method="post">
+        <input type="text" name="message">
+        </input>
+        <input type="submit" value="submit">
+        </input>
+    </form>
+    <script src="./message.ts"></script>
+    <ul id="list"></ul>
+</body>
+
+</html>

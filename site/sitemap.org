@@ -7,6 +7,8 @@
     - [[file:files/blog/site-setup.org][website setup]]
   - experiments
     - [[file:files/experiments/experiments.org][experiments]]
+    - typescript-raytracer
+      - [[file:files/experiments/typescript-raytracer/index.org][index]]
   - learning
     - [[file:files/learning/index.org][learning]]
   - notes
