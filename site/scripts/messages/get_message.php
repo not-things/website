@@ -16,7 +16,6 @@ if ($fd) {
         list($idx, $len) = explode(',',$line);
         fseek($fd, $idx, SEEK_SET);
         $msg = fread($fd, $len);
-
         echo $msg;
     }   
     fclose($fd);

@@ -3,7 +3,7 @@
 include("../env.php");
 
 $data_file_name = DATA_DIR . '/messages';
-$data = htmlspecialchars($_POST["message"]);
+$data = $_POST["message"];
 fail_if(strlen($data) > 200,'your message is too long' . strlen($data));
 $data_fd = fopen($data_file_name, 'a');
 fail_if($data_fd == FALSE, 'failed to upload your message');
