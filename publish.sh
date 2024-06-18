@@ -11,7 +11,7 @@ dist_dir=$root_dir/dist
 # shellcheck source=/dev/null
 . "$root_dir"/.env
 
-rm -rf "${dist_dir:?}/*"
+rm -rfv "${dist_dir:?}/*"
 # mkdir "$dist_dir"
 
 while getopts "hdb" option; do
