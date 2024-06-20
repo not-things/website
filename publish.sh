@@ -1,12 +1,14 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 Help() {
-	printf "build"
+	echo "this is a placeholder help"
 }
 
 root_dir=$(pwd)
 site_dir=$root_dir/site
 dist_dir=$root_dir/dist
+extensions_to_copy="*.php"
+
 
 # shellcheck source=/dev/null
 . "$root_dir"/.env
@@ -28,12 +30,23 @@ while getopts "hdb" option; do
 			;;
 
 		b)
-			# Copy the site over
-			cp -R "${site_dir:?}"/* "$dist_dir"
+			yarn parcel build "${site_dir:?}/*.html" --no-source-maps --no-cache
+			
+			find "${site_dir:?}" -name "*.php" | while read -r file_path
+			do
+				
+				# Get the relative path of the file
+				relative_path="${file_path#"$site_dir"/}"
 
-			yarn parcel build "${dist_dir:?}/*.html" --no-source-maps --no-cache
+				# Create the directory structure in the target directory
+				target_path="$dist_dir/$(dirname "$relative_path")"
+				mkdir -p "$target_path"
 
-			rsync --delete-excluded -av -e ssh --prune-empty-dirs --include="*/" --include-from="${root_dir:?}/.rsync-filter" --exclude="*" "${dist_dir:?}/" "${static_dest:?}"
+				# Copy the file to the target directory, preserving the directory structure
+				cp "$file_path" "$target_path/"
+			done
+
+			rsync -av -e ssh --prune-empty-dirs "${dist_dir:?}/" "${static_dir:?}"
 			;;
         \?)
             echo "Invalid option: -$OPTARG" >&2
