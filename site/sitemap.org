@@ -3,7 +3,7 @@
 - files
   - [[file:files/about-me.org][about me]]
   - blog
-    - [[file:files/blog/anime.org][Anime watch history]]
+    - [[file:files/blog/anime.org][anime watch history]]
     - [[file:files/blog/index.org][blog]]
     - [[file:files/blog/site-setup.org][website setup]]
   - experiments

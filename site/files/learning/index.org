@@ -1,8 +1,4 @@
 #+TITLE: learning
 
-I have a small [[https://www.orgroam.com/][Org Roam]] system set up for notetaking purposes. Planning on publishing some of them soon.
-
-I also host my experiments with the web here.
-
 - [[file:../notes/index.org][notes]]
 - [[file:../experiments/experiments.org][experiments]]

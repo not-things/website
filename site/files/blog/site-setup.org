@@ -1,6 +1,6 @@
 #+TITLE:website setup
 #+DATE: 2024-03-03
-#+FILETAGS: website
+#+FILETAGS: :Website:
 #+SETUPFILE: setup
 
 How I set up this website. 
