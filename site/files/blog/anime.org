@@ -1,0 +1,26 @@
+#+TITLE: anime watch history
+
+a lazy record of the anime that I've watched recently. The ratings are from 1 to 10. All links lead to MyAnimeList. 
+
+
+* 2024
+
+** 2024-06
+- [X] [[https://myanimelist.net/anime/38328/Azur_Lane?q=azur%20lane&cat=anime][Azur Lane]]
+  - 7/10
+  - Watch only if you play the game. Otherwise it is boring.
+- [X] [[https://myanimelist.net/anime/52991/Sousou_no_Frieren?q=frieren&cat=anime][Sousou no Frieren]]
+  - 8/10
+- [X] [[https://myanimelist.net/anime/22147/Amagi_Brilliant_Park?q=amagi&cat=anime][Amagi Brilliant Park]]
+  - 7/10
+** 2024-05
+- [X] [[https://myanimelist.net/anime/22135/Ping_Pong_the_Animation][Ping Pong the Animation]]
+  - 9/10
+
+
+
+
+
+# Local Variables:
+# org-reverse-datetree-level-formats: ("%Y" "%Y-%m")
+# End:

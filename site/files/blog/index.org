@@ -1,4 +1,6 @@
 #+TITLE: blog
 
+- [[file:anime.org][Anime watch history]] 
+  - Updated on Fri Jun 28 05:39:16 2024
 - [[file:site-setup.org][website setup]] 
-  - Posted on Sun Mar  3 17:31:06 2024
+  - Updated on Sun Mar  3 18:37:14 2024

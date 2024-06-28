@@ -1,6 +1,8 @@
 #+TITLE: How PBRT's dynamic dispatch works.
 
-This is a writeup on how PBRT's dynamic dispatch with tagged pointers work. Most of the information is on [[https://pbr-book.org/][the book website]] but scattered around a few parts so this is more just all of the information gathered together. I think there's some interesting plumbing that utilizes the expressiveness of the C++ type system. I'm also not particularly well-versed in terms of hardware stuff so there are probably a few errors. Please email me at {ADDRESS} for any mistakes.
+This is an explanation on how PBRT's [[https://en.wikipedia.org/wiki/Dynamic_dispatch][dynamic dispatch]] with tagged pointers work. Dynamic dispatch is used to run different code based on the type of the object that is only determined during runtime.
+
+In CUDA, code sharing between CPU and GPU is limited because they don't share the same memory addresses. This mechanism is needed to run 
 
 * Overview
 
@@ -45,6 +47,9 @@ In PBRT the base function inherits off of a ~TaggedPointer~ class
 
 * Conclusion
 
+Most of the information is on [[https://pbr-book.org/][the book website]] but scattered around a few parts so this is more just all of the information gathered together. I think there's some interesting plumbing that utilizes the expressiveness of the C++ type system.
+
+I'm also not particularly well-versed in terms of hardware stuff so there are probably a few errors. Please email me at {ADDRESS} for any mistakes.
 
 Of course, the credit goes towards the pbrt authors for making an interesting alternative to the vtable mechanism. 
 
