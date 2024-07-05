@@ -1,6 +1,6 @@
 #+TITLE: anime watch history
 #+FILETAGS: :Anime:RecordKeeping:
-a lazy record of the anime that I've watched recently. The ratings are from 1 to 10. All links lead to MyAnimeList. 
+a lazy record of anime that I've watched since 2024 June. The ratings are from 1 to 10. All links lead to MyAnimeList. I don't guarantee that this is spoiler-less.
 
 
 * 2024
